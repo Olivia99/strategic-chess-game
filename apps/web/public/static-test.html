@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .status { color: #28a745; font-weight: bold; }
+        .error { color: #dc3545; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Static Test Page</h1>
+        <p class="status">✅ Static HTML is working on Vercel</p>
+        <p>If you can see this page, then Vercel is serving static files correctly.</p>
+        <p>This suggests the issue is with React Router or server-side rendering.</p>
+        
+        <h2>Test Links:</h2>
+        <ul>
+            <li><a href="/">Homepage (React Router)</a></li>
+            <li><a href="/test">Test Page (React Router)</a></li>
+            <li><a href="/api/health">Health API</a></li>
+        </ul>
+        
+        <p><strong>Timestamp:</strong> <span id="timestamp"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toISOString();
+    </script>
+</body>
+</html>

@@ -2,7 +2,7 @@ import type { Config } from '@react-router/dev/config';
 
 export default {
 	appDirectory: './src/app',
-	ssr: true,
+	ssr: false,
 	prerender: false,
 	buildDirectory: "build",
 	serverBuildFile: "index.js",
