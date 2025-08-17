@@ -9,7 +9,15 @@
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
       "Bash(git push:*)",
-      "Bash(echo:*)"
+      "Bash(echo:*)",
+      "Bash(git config:*)",
+      "Bash(rm:*)",
+      "Bash(mkdir:*)",
+      "Bash(npx playwright install:*)",
+      "Bash(PLAYWRIGHT_BASE_URL=https://strategic-chess-game.vercel.app npx playwright test --reporter=list)",
+      "Bash(curl:*)",
+      "Bash(gh:*)",
+      "Bash(ls:*)"
     ],
     "deny": []
   }

@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "apps/web/package.json",
+      "use": "@vercel/node",
+      "config": {
+        "buildCommand": "cd apps/web && npm run build",
+        "outputDirectory": "apps/web/build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "apps/web/build/server/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "apps/web/build/server/index.js"
+    }
+  ],
+  "functions": {
+    "apps/web/build/server/index.js": {
+      "maxDuration": 30
+    }
+  }
+}
