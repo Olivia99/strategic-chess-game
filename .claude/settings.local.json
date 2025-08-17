@@ -17,7 +17,8 @@
       "Bash(PLAYWRIGHT_BASE_URL=https://strategic-chess-game.vercel.app npx playwright test --reporter=list)",
       "Bash(curl:*)",
       "Bash(gh:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }

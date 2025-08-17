@@ -8,6 +8,7 @@ import {
 } from 'react-router';
 
 import { type ReactNode } from 'react';
+import './global.css';
 
 export const links = () => [];
 
