@@ -44,11 +44,20 @@ NODE_ENV=production
    - Import from GitHub: `Olivia99/strategic-chess-game`
 
 2. **Configure Project Settings (IMPORTANT):**
-   - **Framework Preset**: Other  
+
+**Option A - React Router v7 (Recommended):**
+   - **Framework Preset**: Other
    - **Root Directory**: `apps/web` ⚠️ **CRITICAL: Set this to apps/web**
-   - **Build Command**: `npm run build`
+   - **Build Command**: `npm run build` (uses react-router build)
    - **Output Directory**: `build`
    - **Install Command**: `npm install`
+
+**Option B - Try React Preset:**
+   - **Framework Preset**: React
+   - **Root Directory**: `apps/web` ⚠️ **CRITICAL: Set this to apps/web**
+   - **Build Command**: Leave empty (auto-detected)
+   - **Output Directory**: `build`
+   - **Install Command**: Leave empty (auto-detected)
 
 3. **Set Environment Variables:**
    - Add `DATABASE_URL` with your Neon database URL
@@ -75,13 +84,26 @@ vercel env add DATABASE_URL
 vercel env add NODE_ENV
 ```
 
+### 🔧 Why "Other" Framework Preset?
+
+**This project uses React Router v7**, which is different from standard React apps:
+
+1. **Custom Build System**: Uses `react-router build` (not Vite/Webpack)
+2. **SSR Architecture**: Generates `build/server/index.js` for server-side rendering  
+3. **Full-Stack Framework**: More like Next.js than Create React App
+4. **Vercel's React Preset**: Optimized for CRA/Vite, may conflict with React Router v7
+
+**You can try both options above:**
+- **Option A (Other)**: Explicit control over build process
+- **Option B (React)**: Let Vercel auto-detect (may work with React Router v7)
+
 ### 🔍 Key Fixes Applied
 
-1. **Fixed Monorepo Structure**: Proper routing to `apps/web/build/server/index.js`
+1. **Fixed Monorepo Structure**: Proper Root Directory setting  
 2. **Node.js Runtime**: Explicitly set to `nodejs18.x`
-3. **Build Commands**: Corrected to navigate to apps/web directory
-4. **Output Directory**: Fixed to point to correct build output
-5. **Route Configuration**: Added proper API and catch-all routes
+3. **React Router v7 Support**: Uses correct build commands
+4. **Output Directory**: Points to React Router's build output
+5. **SSR Function Configuration**: Proper serverless function setup
 
 ### 🧪 Verification Steps
 
