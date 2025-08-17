@@ -25,17 +25,40 @@ export function ErrorBoundary() {
         <title>Error - Strategic Chess Game</title>
       </head>
       <body>
-        <div className="min-h-screen bg-gradient-to-br from-amber-50 to-orange-100 flex items-center justify-center p-4">
-          <div className="max-w-md w-full bg-white rounded-xl p-8 shadow-lg text-center">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+        <div style={{
+          minHeight: '100vh',
+          background: 'linear-gradient(135deg, #fefce8 0%, #fed7aa 100%)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '16px'
+        }}>
+          <div style={{
+            maxWidth: '400px',
+            width: '100%',
+            background: 'white',
+            borderRadius: '12px',
+            padding: '32px',
+            boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+            textAlign: 'center'
+          }}>
+            <h2 style={{fontSize: '24px', fontWeight: 'bold', color: '#374151', marginBottom: '16px'}}>
               Something went wrong
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p style={{color: '#6b7280', marginBottom: '24px'}}>
               An error occurred while loading the application.
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+              style={{
+                background: '#d97706',
+                color: 'white',
+                padding: '12px 24px',
+                borderRadius: '8px',
+                fontWeight: '600',
+                border: 'none',
+                cursor: 'pointer'
+              }}
             >
               Reload Page
             </button>
