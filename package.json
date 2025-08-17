@@ -5,9 +5,13 @@
   "scripts": {
     "build": "cd apps/web && npm install && npm run build",
     "start": "cd apps/web && npm start",
-    "dev": "cd apps/web && npm run dev"
+    "dev": "cd apps/web && npm run dev",
+    "vercel-build": "cd apps/web && npm install && npm run build"
   },
   "workspaces": [
     "apps/*"
-  ]
+  ],
+  "engines": {
+    "node": "18.x"
+  }
 }

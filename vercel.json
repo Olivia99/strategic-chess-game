@@ -6,7 +6,18 @@
   "framework": null,
   "functions": {
     "apps/web/build/server/index.js": {
+      "runtime": "nodejs18.x",
       "maxDuration": 30
     }
-  }
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "apps/web/build/server/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "apps/web/build/server/index.js"
+    }
+  ]
 }
