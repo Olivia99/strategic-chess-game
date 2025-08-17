@@ -60,11 +60,11 @@ apps/web-react/           # New React application
    - Import from GitHub: `Olivia99/strategic-chess-game`
 
 3. **Configure Project Settings:**
-   - **Framework Preset**: React ✅
-   - **Root Directory**: Leave as `.` (root)
-   - **Build Command**: Auto-detected from vercel.json
-   - **Output Directory**: Auto-detected from vercel.json
-   - **Install Command**: Auto-detected from vercel.json
+   - **Framework Preset**: React ✅  
+   - **Root Directory**: `apps/web-react` ⚠️ **CRITICAL: Set this to apps/web-react**
+   - **Build Command**: `npm run build` (auto-detected)
+   - **Output Directory**: `dist` (auto-detected)
+   - **Install Command**: `npm install` (auto-detected)
 
 4. **Set Environment Variables:**
    ```env
