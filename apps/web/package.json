@@ -7,7 +7,10 @@
 		"build": "react-router build",
 		"start": "react-router-serve ./build/server/index.js",
 		"typecheck": "react-router typegen && tsc --noEmit",
-		"vercel-build": "react-router build"
+		"vercel-build": "react-router build",
+		"test": "playwright test",
+		"test:ui": "playwright test --ui",
+		"test:debug": "playwright test --debug"
 	},
 	"dependencies": {
 		"@auth/core": "^0.37.2",
@@ -72,6 +75,7 @@
 		"@babel/preset-typescript": "^7.27.1",
 		"@babel/traverse": "^7.27.1",
 		"@babel/types": "^7.27.1",
+		"@playwright/test": "^1.49.1",
 		"@react-router/dev": "^7.6.0",
 		"@tailwindcss/vite": "^4.1.4",
 		"@testing-library/jest-dom": "^6.6.4",
