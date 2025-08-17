@@ -1,20 +1,13 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "build/client",
-  "framework": null,
   "functions": {
-    "build/server/index.js": {
+    "src/app/api/**/*.js": {
       "runtime": "nodejs18.x"
     }
   },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/build/server/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/build/client/$1"
+      "dest": "/src/app/api/$1"
     }
   ]
 }
