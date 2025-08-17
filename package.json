@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "cd apps/web && npm install && npm run build",
+    "build": "node build.js",
     "start": "cd apps/web && npm start",
     "dev": "cd apps/web && npm run dev",
-    "vercel-build": "cd apps/web && npm install && npm run build"
+    "vercel-build": "node build.js"
   },
   "workspaces": [
     "apps/*"

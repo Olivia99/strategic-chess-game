@@ -57,11 +57,11 @@ NODE_ENV=production
    - Click "Add New..." → "Project"
    - Import from GitHub: `Olivia99/strategic-chess-game`
 
-2. **Configure Project Settings:**
-   - **Framework Preset**: Other
-   - **Root Directory**: Leave as `.` (root)
-   - **Build Command**: `npm run vercel-build`
-   - **Output Directory**: `apps/web/build/client`
+2. **Configure Project Settings (IMPORTANT):**
+   - **Framework Preset**: Other  
+   - **Root Directory**: `apps/web` ⚠️ **CRITICAL: Set this to apps/web**
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `build/client`
    - **Install Command**: `npm install`
 
 3. **Set Environment Variables:**

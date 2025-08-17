@@ -1,23 +1,9 @@
 {
   "version": 2,
-  "buildCommand": "cd apps/web && npm install && npm run build",
-  "outputDirectory": "apps/web/build/client",
-  "installCommand": "cd apps/web && npm install",
-  "framework": null,
   "functions": {
-    "apps/web/build/server/index.js": {
+    "build/server/index.js": {
       "runtime": "nodejs18.x",
       "maxDuration": 30
     }
-  },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "apps/web/build/server/index.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "apps/web/build/server/index.js"
-    }
-  ]
+  }
 }
