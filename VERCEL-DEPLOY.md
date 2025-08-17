@@ -25,26 +25,12 @@ NODE_ENV=production
 ```json
 {
   "version": 2,
-  "buildCommand": "cd apps/web && npm install && npm run build",
-  "outputDirectory": "apps/web/build/client",
-  "installCommand": "cd apps/web && npm install",
-  "framework": null,
   "functions": {
-    "apps/web/build/server/index.js": {
+    "build/server/index.js": {
       "runtime": "nodejs18.x",
       "maxDuration": 30
     }
-  },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "apps/web/build/server/index.js"
-    },
-    {
-      "src": "/(.*)", 
-      "dest": "apps/web/build/server/index.js"
-    }
-  ]
+  }
 }
 ```
 
@@ -61,7 +47,7 @@ NODE_ENV=production
    - **Framework Preset**: Other  
    - **Root Directory**: `apps/web` ⚠️ **CRITICAL: Set this to apps/web**
    - **Build Command**: `npm run build`
-   - **Output Directory**: `build/client`
+   - **Output Directory**: `build`
    - **Install Command**: `npm install`
 
 3. **Set Environment Variables:**
@@ -116,8 +102,8 @@ After deployment:
    - Click on any function to see logs
 
 2. **Verify Build Output:**
-   - Check that `apps/web/build/server/index.js` exists after build
-   - Verify `apps/web/build/client` contains static assets
+   - Check that `build/server/index.js` exists after build (when Root Directory is apps/web)
+   - Verify `build/client` contains static assets
 
 3. **Environment Variables:**
    - Ensure DATABASE_URL is properly formatted
@@ -143,12 +129,12 @@ After deployment:
 Root/
 ├── vercel.json           # Vercel deployment config
 ├── package.json          # Root package.json with build scripts
-└── apps/web/
+└── apps/web/            # Root Directory in Vercel
     ├── package.json      # Web app dependencies
     ├── react-router.config.ts
     ├── src/app/          # React Router app
-    └── build/            # Build output (generated)
-        ├── client/       # Static assets (outputDirectory)
+    └── build/            # Build output (outputDirectory)
+        ├── client/       # Static assets
         └── server/       # Server functions
             └── index.js  # Main server function
 ```
