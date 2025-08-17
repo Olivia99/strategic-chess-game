@@ -2,8 +2,16 @@ import sql from "@/app/api/utils/sql";
 
 export async function GET(request, { params }) {
   try {
+    console.log('GET /api/rooms/[roomCode] called', { params });
+    
     const { roomCode } = params;
+    if (!roomCode) {
+      console.error('No roomCode provided');
+      return Response.json({ error: "Room code is required" }, { status: 400 });
+    }
+    
     const code = roomCode.toUpperCase();
+    console.log('Looking for room:', code);
 
     const [room] = await sql`
       SELECT * FROM game_rooms 
