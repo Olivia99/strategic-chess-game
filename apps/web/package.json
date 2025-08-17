@@ -4,10 +4,10 @@
 	"type": "module",
 	"scripts": {
 		"dev": "react-router dev",
-		"build": "react-router build && npm run postbuild",
-		"postbuild": "node scripts/init-db.js",
+		"build": "react-router build",
 		"start": "react-router-serve ./build/server/index.js",
-		"typecheck": "react-router typegen && tsc --noEmit"
+		"typecheck": "react-router typegen && tsc --noEmit",
+		"vercel-build": "react-router build"
 	},
 	"dependencies": {
 		"@auth/core": "^0.37.2",
